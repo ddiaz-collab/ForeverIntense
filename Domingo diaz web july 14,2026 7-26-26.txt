@@ -1,0 +1,61 @@
+<DOCTYPE HTML>
+<html>                  
+<head
+    <title>Domingo Diaz Web - July 14, 2026</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Domingo Diaz's personal web page, showcasing his projects, portfolio, and contact information.">
+
+
+<h1>Welcome to Domingo Diaz's Web Page</h1>
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm Domingo Diaz, a web developer and designer passionate about creating innovative web solutions. I specialize in front-end development, user experience design, and responsive web design.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li><a href="project1.html">Project 1: Portfolio Website</a></li>
+            <li><a href="project2.html">Project 2: E-commerce Platform</a></li>
+            <li><a href="project3.html">Project 3: Blogging Platform</a></li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>If you'd like to get in touch, please reach out via email at <a href="mailto:domingo.diaz@example.com">domingo.diaz@example.com</a>.</p>
+        <img src="profile.jpg" alt="Domingo Diaz" width="200" height="200">
+    </section>
+<section id="footer">
+        <h2></h2>
+    <p>&copy; 2026 Domingo Diaz. All rights reserved.</p>
+<ol><li><a href="privacy.html">Privacy Policy</a></li>
+<li><a href="terms.html">Terms of Service</a></li></ol>
+</section>
+<section id="social-media">
+        <h3>Follow Me</h3>
+        <ul>
+            <li><a href="https://twitter.com/domingo_diaz" target="_blank">Twitter</a></li>
+            <li><a href="https://linkedin.com/in/domingo-diaz" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/domingo-diaz" target="_blank">GitHub</a></li>
+        </ul>
+    <li><a href="https://instagram.com/domingo_diaz" target="_blank">Instagram</a></li>
+    </li><a href="https://facebook.com/domingo.diaz" target="_blank">Facebook</a></li>
+</section>  
+</main>
+<footer>
+    <p>&copy; 2026 Domingo Diaz. All rights reserved.</p>
