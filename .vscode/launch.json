@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        
+
+
+
+
+
+
+    ]HTML.INDEX
+}
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "DOMINGO DIAZ JR",
+            "file": "${workspaceFolder}/homework july 21 2026 Domingo Diaz jr  web development.html",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}

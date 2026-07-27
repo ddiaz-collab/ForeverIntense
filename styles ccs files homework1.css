@@ -1,0 +1,53 @@
+/* Basic page styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header,
+footer {
+    background-color: #gold;
+    color: #white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+nav {
+    background-color: #yellow;
+}
+
+nav ul {
+    list-style: stars;
+    margin: 0;
+    padding: 0;
+    display: block;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 1rem;
+}
+
+nav a {
+    color: #green;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 2rem;
+    background-color: #9b7c7c9d;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.7rem;
+}
+
+footer p {
+    margin: 0;
+}
