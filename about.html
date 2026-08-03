@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - My Web Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+        nav a.active {
+            color: #ffd700;
+            border-bottom: 2px solid #ffd700;
+        }
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        section {
+            background-color: #fff;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        section h2 {
+            color: #333;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #333;
+            padding-bottom: 0.5rem;
+        }
+        section h3 {
+            color: #555;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        section p {
+            color: #666;
+            margin: 1rem 0;
+        }
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .skill-box {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-left: 4px solid #333;
+            border-radius: 4px;
+        }
+        .skill-box h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        .skill-box p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 1rem 0;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Web Page</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a creative and motivated web developer who enjoys building meaningful online experiences. My passion is creating websites that are not only visually appealing but also user-friendly and functional.</p>
+            
+            <h3>Background</h3>
+            <p>I started my web development journey to combine my love of design with technical skills. Through hands-on projects and continuous learning, I've developed expertise in creating responsive, modern websites that serve real user needs.</p>
+            
+            <h3>Skills & Expertise</h3>
+            <div class="skills">
+                <div class="skill-box">
+                    <h4>Front-End Development</h4>
+                    <p>HTML5, CSS3, JavaScript, and responsive design</p>
+                </div>
+                <div class="skill-box">
+                    <h4>Web Design</h4>
+                    <p>UI/UX design, wireframing, and visual design principles</p>
+                </div>
+                <div class="skill-box">
+                    <h4>Project Management</h4>
+                    <p>Planning, organization, and delivering quality results</p>
+                </div>
+                <div class="skill-box">
+                    <h4>Tools & Workflow</h4>
+                    <p>VS Code, GitHub, browser debugging, and clean file organization</p>
+                </div>
+                <div class="skill-box">
+                    <h4>Problem Solving</h4>
+                    <p>Breaking down complex tasks, testing layouts, and fixing issues quickly</p>
+                </div>
+                <div class="skill-box">
+                    <h4>Communication & Teamwork</h4>
+                    <p>Clear updates, collaboration, and delivering projects on time</p>
+                </div>
+            </div>
+
+            <h3>What I'm Passionate About</h3>
+            <p>I'm passionate about creating websites that solve real problems and provide excellent user experiences. I enjoy learning new technologies and best practices in web development to stay current with industry trends.</p>
+            
+            <a href="projects.html" class="cta-button">View My Projects →</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Domingo Diaz. All rights reserved.</p>
+    </footer>
+</body>
+</html>
