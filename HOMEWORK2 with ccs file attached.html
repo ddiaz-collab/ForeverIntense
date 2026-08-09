@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domingo Diaz Jr Home work 2</title>
+    <link rel="stylesheet" href="HOMEWORK2.css">
+</head>
+<body>
+    <header>
+        <h1>King Maui Holy Page</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#social">Instagram</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Home</h2>
+            <p>Christ Journey</p>
+        </section>
+
+        <div class="section-grid">
+            <section id="about">
+                <h2>About</h2>
+                <p>I am Domingo Diaz Jr., and I enjoy creating web pages, learning new skills, and sharing my work with others.</p>
+            </section>
+
+            <section id="contact">
+                <h2>Contact</h2>
+                <p>Contact me using this form or by email at ddiaz@my.campus.edu.</p>
+                <form id="contact-form" novalidate aria-describedby="contact-help form-errors">
+                    <p id="contact-help" class="helper-text">Fields marked with an asterisk are required.</p>
+
+                    <div class="form-row">
+                        <label for="full-name">Full Name *</label>
+                        <input id="full-name" name="full-name" type="text" required aria-describedby="name-error">
+                        <p id="name-error" class="error-text" hidden>Please enter your full name.</p>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="email">Email Address *</label>
+                        <input id="email" name="email" type="email" required aria-describedby="email-error">
+                        <p id="email-error" class="error-text" hidden>Please enter a valid email address.</p>
+                    </div>
+
+                    <fieldset>
+                        <legend>Reason for Contact *</legend>
+                        <div class="choice-grid" role="radiogroup" aria-describedby="reason-error">
+                            <label for="reason-project"><input id="reason-project" name="reason" type="radio" value="Project Request" required> Project Request</label>
+                            <label for="reason-support"><input id="reason-support" name="reason" type="radio" value="School Support"> School Support</label>
+                            <label for="reason-question"><input id="reason-question" name="reason" type="radio" value="General Question"> General Question</label>
+                        </div>
+                        <p id="reason-error" class="error-text" hidden>Please choose one reason for contact.</p>
+                    </fieldset>
+
+                    <div class="form-row">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required aria-describedby="message-error"></textarea>
+                        <p id="message-error" class="error-text" hidden>Please enter a short message.</p>
+                    </div>
+
+                    <div id="form-errors" class="error-summary" role="alert" hidden>
+                        Please fix the highlighted fields before submitting.
+                    </div>
+
+                    <button type="submit">Send Message</button>
+                </form>
+                <p id="success-message" class="helper-text" hidden>Your form passed validation and is ready to submit.</p>
+            </section>
+
+            <section id="services">
+                <h2>Services</h2>
+                <p>I can offer web page design, simple coding help, school project support, and creative layout ideas.</p>
+            </section>
+
+            <section id="social">
+                <h2>Social</h2>
+                <p>Follow me on Instagram for updates and projects.</p>
+                <p><a class="social-link" href="https://www.instagram.com/foreverintensekingmaui" target="_blank" rel="noopener noreferrer">@foreverintensekingmaui</a></p>
+                <p>Or email me at <a class="social-link" href="mailto:ddiaz@my.campus.edu">ddiaz@my.campus.edu</a></p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Domingo Diaz. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById("contact-form");
+        const fullName = document.getElementById("full-name");
+        const email = document.getElementById("email");
+        const message = document.getElementById("message");
+        const reasonInputs = Array.from(document.querySelectorAll("input[name='reason']"));
+        const nameError = document.getElementById("name-error");
+        const emailError = document.getElementById("email-error");
+        const reasonError = document.getElementById("reason-error");
+        const messageError = document.getElementById("message-error");
+        const formErrors = document.getElementById("form-errors");
+        const successMessage = document.getElementById("success-message");
+
+        function setFieldError(field, errorNode, hasError) {
+            field.setAttribute("aria-invalid", hasError ? "true" : "false");
+            errorNode.hidden = !hasError;
+        }
+
+        function markGroup(inputs, hasError) {
+            inputs.forEach(function (input) {
+                if (hasError) {
+                    input.setAttribute("aria-invalid", "true");
+                } else {
+                    input.removeAttribute("aria-invalid");
+                }
+            });
+        }
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const nameInvalid = fullName.value.trim().length === 0;
+            const emailInvalid = !email.validity.valid;
+            const messageInvalid = message.value.trim().length === 0;
+            const reasonInvalid = !reasonInputs.some(function (input) {
+                return input.checked;
+            });
+
+            setFieldError(fullName, nameError, nameInvalid);
+            setFieldError(email, emailError, emailInvalid);
+            setFieldError(message, messageError, messageInvalid);
+            reasonError.hidden = !reasonInvalid;
+            markGroup(reasonInputs, reasonInvalid);
+
+            const hasErrors = nameInvalid || emailInvalid || reasonInvalid || messageInvalid;
+            formErrors.hidden = !hasErrors;
+            successMessage.hidden = hasErrors;
+
+            if (hasErrors) {
+                const firstInvalid = [fullName, email, reasonInputs[0], message].find(function (field) {
+                    return field.getAttribute("aria-invalid") === "true";
+                });
+
+                if (firstInvalid) {
+                    firstInvalid.focus();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
