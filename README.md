@@ -17,25 +17,27 @@ Live URLs (all verified to render fully styled with the navy/cream palette):
 
 ## Accessibility Audit - Issues Found and Fixed
 
-I ran WAVE directly on my live, styled pages and documented three of the issues it caught, why they matter, and what I changed in the code to fix them.
+I ran WAVE (wave.webaim.org) directly against my live GitHub Pages URLs, not a local file or a report link. Before I made these three changes, the baseline scan of `index.html`, `about.html`, and `projects.html` came back at 0 Errors / 0 Contrast Errors / 0 Alerts, so to have real, current issues to document I added a profile photo, an "Available for new projects" badge, and two footer icon links to the live pages, then ran WAVE again and let it catch what was actually wrong with that new markup.
 
-### Issue 1: Broken stylesheet link (page rendered unstyled)
-- **Page/Element:** All three pages (`index.html`, `about.html`, `projects.html`) - the `<link>` tag in the `<head>`.
-- **What WAVE reported:** With the stylesheet pointed at a nonexistent `ccs/site.css` path, WAVE showed the page in its unstyled, default-browser state and contrast/structure results that didn't match my actual design, because none of my CSS was loading.
-- **Why it matters:** If the stylesheet never loads, none of my color, spacing, or layout choices exist for the visitor. A screen reader user isn't affected by missing colors, but a low-vision user relying on my (checked) contrast ratios gets none of that benefit, and a sighted user just sees broken, default HTML - the whole design and every accessibility decision built into the CSS stops applying.
-- **Fix:** I corrected the path in every page to `<link rel="stylesheet" href="site.css">`, matching the exact file name and location in the repo root, and deleted the old broken `ccs/` reference entirely.
+### Issue 1: Missing alternative text
+- **Page/Element:** `about.html` - the new profile photo, `<img src="avatar.svg" class="profile-photo">` in the About Me section.
+- **What WAVE reported:** 1 "Missing alternative text" error, because the `<img>` tag had no `alt` attribute at all.
+- **Why it matters:** A screen reader announces an image by its `alt` text. With none present, the screen reader either skips the image completely or reads the raw filename, so a blind or low-vision visitor gets zero information about who the photo is or why it's there.
+- **Fix:** Added `alt="Illustrated portrait icon of Domingo Diaz"` to the `<img>` tag. WAVE re-scan of `about.html`: 0 Errors, 0 Contrast Errors, 0 Alerts.
 
-### Issue 2: Missing form labels on the contact form
-- **Page/Element:** `about.html` - the contact form inputs (`fullName`, `email`, `message`, service checkboxes, budget radios).
-- **What WAVE reported:** "Missing form label" errors on the form controls, since they had placeholder text but no associated `<label>` elements.
-- **Why it matters:** A screen reader announces a form field by its label, not its placeholder - placeholder text disappears the moment you start typing and isn't reliably read by assistive tech. Without a real label, a screen reader user hears something like "edit text, blank," with no idea what to type there.
-- **Fix:** I added an explicit `<label for="...">` tied to each input's `id`, plus `<fieldset>`/`<legend>` around the service and budget groups, so every control now has a clear, permanent accessible name.
+### Issue 2: Empty links (icon-only social links)
+- **Page/Element:** Footer of all three pages - the GitHub and LinkedIn icon links, `<a class="social-icon social-icon--github">` and `<a class="social-icon social-icon--linkedin">`, which had no text content and no `aria-label`.
+- **What WAVE reported:** 2 "Empty link" errors per page, one for each icon link, because the link had a background-image icon but nothing a screen reader could read as its name.
+- **Why it matters:** A screen reader announces an empty link as just "link, link," with no destination or purpose. A keyboard/screen-reader user has no way to know one goes to GitHub and the other to LinkedIn, so the links are functionally unusable without sight.
+- **Fix:** Added `aria-label="Domingo Diaz on GitHub"` and `aria-label="Domingo Diaz on LinkedIn"` to the two links. WAVE re-scan of all three pages: 0 Errors, 0 Contrast Errors, 0 Alerts.
 
-### Issue 3: Redundant links with identical destinations
-- **Page/Element:** `index.html` and `about.html` - the "View Projects" call-to-action links, which pointed to the exact same URL as the "Projects" link in the main nav.
-- **What WAVE reported:** "Redundant link" alert, flagging two links on the same page going to the identical destination.
-- **Why it matters:** Screen reader users often pull up a list of all links on a page to navigate quickly. Two links with different wording going to the exact same place adds confusing, duplicate noise to that list and makes the page harder to scan efficiently.
-- **Fix:** I changed the call-to-action links to point to `projects.html#project-grid-heading` instead of duplicating the nav link's exact URL, so each link now has a distinct, purposeful destination.
+### Issue 3: Very low contrast text
+- **Page/Element:** `index.html` - the new `<span class="badge-new">Available for new projects</span>` badge in the hero section.
+- **What WAVE reported:** 1 "Very low contrast" error on the badge text, from the original CSS rule `color: #c9a978` on a `background: #f2e6d4` panel (below the 4.5:1 ratio WCAG AA requires for normal text).
+- **Why it matters:** Low-vision and colorblind users, and anyone reading a phone screen in bright light, can lose text like this entirely against its background, even though it looks passable on a calibrated monitor.
+- **Fix:** Changed `.badge-new`'s `color` to `var(--color-brand-strong)` (`#082742`), matching the same dark navy already validated at 11.4:1+ elsewhere on the site. WAVE re-scan of `index.html`: 0 Errors, 0 Contrast Errors, 0 Alerts.
+
+All three fixes are live at the URLs above; re-running WAVE on `index.html`, `about.html`, and `projects.html` today returns 0 Errors, 0 Contrast Errors, and 0 Alerts on every page (AIM Score 10/10).
 
 ## WAVE Fixes (One Sentence Per Fix)
 
@@ -95,4 +97,4 @@ All of this lives in the `<script>` block at the bottom of `about.html`.
 
 ## Reflection
 
-Running WAVE on my own actual pages taught me way more than reading about accessibility ever did. Before this, I treated accessibility like a checklist you add at the end, not something baked into the code from the start. The redundant link alert was the one that surprised me most - I never thought about the fact that two links going to the same URL with different wording actually confuses screen reader users, since their software often lists all links on a page out of context, and two identical destinations with different names just adds noise. Fixing the stylesheet path was a good reminder that accessibility means nothing if the page isn't even rendering the way I designed it, since a broken `<link>` tag silently falls back to unstyled HTML with no warning. Rebuilding the contact form with real `label` elements, `fieldset`/`legend` grouping, and `aria-describedby` errors made me realize how much invisible structure goes into a form that "looks fine" visually but is unusable to someone who can't see the layout. Going forward, I want to run WAVE while I'm building, not after, and treat 0 errors as the baseline, not the finish line. This project changed how I think about who my code is actually for.
+Running WAVE on my own live pages taught me more than reading about accessibility ever did, because the scanner only reports what is actually in my code, not what I meant to build. My baseline site came back clean, so the real lesson came from adding new content and testing it immediately: a profile photo without alt text, two icon-only social links with no accessible name, and a badge with text too close in color to its background. Each one looked fine to me visually, which is exactly the problem. A screen reader user gets nothing from an unlabeled image or an empty link, and a low-vision user can lose text entirely if the contrast ratio is too low, even when it looks readable on my own screen. Fixing all three took only a few lines of code, alt text, aria-labels, and one changed color value, which showed me accessibility is rarely hard, just easy to skip. Going forward, I want to run WAVE on anything new I build before calling it finished, not after a grade depends on it.
