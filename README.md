@@ -15,6 +15,28 @@ Live URLs (all verified to render fully styled with the navy/cream palette):
 - https://ddiaz-collab.github.io/ForeverIntense/about.html
 - https://ddiaz-collab.github.io/ForeverIntense/projects.html
 
+## Accessibility Audit - Issues Found and Fixed
+
+I ran WAVE directly on my live, styled pages and documented three of the issues it caught, why they matter, and what I changed in the code to fix them.
+
+### Issue 1: Broken stylesheet link (page rendered unstyled)
+- **Page/Element:** All three pages (`index.html`, `about.html`, `projects.html`) - the `<link>` tag in the `<head>`.
+- **What WAVE reported:** With the stylesheet pointed at a nonexistent `ccs/site.css` path, WAVE showed the page in its unstyled, default-browser state and contrast/structure results that didn't match my actual design, because none of my CSS was loading.
+- **Why it matters:** If the stylesheet never loads, none of my color, spacing, or layout choices exist for the visitor. A screen reader user isn't affected by missing colors, but a low-vision user relying on my (checked) contrast ratios gets none of that benefit, and a sighted user just sees broken, default HTML - the whole design and every accessibility decision built into the CSS stops applying.
+- **Fix:** I corrected the path in every page to `<link rel="stylesheet" href="site.css">`, matching the exact file name and location in the repo root, and deleted the old broken `ccs/` reference entirely.
+
+### Issue 2: Missing form labels on the contact form
+- **Page/Element:** `about.html` - the contact form inputs (`fullName`, `email`, `message`, service checkboxes, budget radios).
+- **What WAVE reported:** "Missing form label" errors on the form controls, since they had placeholder text but no associated `<label>` elements.
+- **Why it matters:** A screen reader announces a form field by its label, not its placeholder - placeholder text disappears the moment you start typing and isn't reliably read by assistive tech. Without a real label, a screen reader user hears something like "edit text, blank," with no idea what to type there.
+- **Fix:** I added an explicit `<label for="...">` tied to each input's `id`, plus `<fieldset>`/`<legend>` around the service and budget groups, so every control now has a clear, permanent accessible name.
+
+### Issue 3: Redundant links with identical destinations
+- **Page/Element:** `index.html` and `about.html` - the "View Projects" call-to-action links, which pointed to the exact same URL as the "Projects" link in the main nav.
+- **What WAVE reported:** "Redundant link" alert, flagging two links on the same page going to the identical destination.
+- **Why it matters:** Screen reader users often pull up a list of all links on a page to navigate quickly. Two links with different wording going to the exact same place adds confusing, duplicate noise to that list and makes the page harder to scan efficiently.
+- **Fix:** I changed the call-to-action links to point to `projects.html#project-grid-heading` instead of duplicating the nav link's exact URL, so each link now has a distinct, purposeful destination.
+
 ## WAVE Fixes (One Sentence Per Fix)
 
 1. I removed the broken `ccs/site.css` and `../ccs/site.css` stylesheet paths that pointed to a folder that never existed, so every page now loads `site.css` and renders styled instead of falling back to the browser default.
@@ -70,3 +92,7 @@ All of this lives in the `<script>` block at the bottom of `about.html`.
 - I call `setFieldError` once per single field and `markGroup` once per group, which is what actually shows/hides each error message and sets/clears `aria-invalid` on submit, every time, for every field, based on its current state.
 - `hasErrors` ORs all five checks together; `formErrors.hidden`/`successMessage.hidden` are set from that so the right whole-form message shows.
 - If `hasErrors` is `true`, I use `.find()` on the first input of each field/group to locate whichever one currently has `aria-invalid="true"`, and call `.focus()` on it so the user (and a screen reader) lands directly on the first problem.
+
+## Reflection
+
+Running WAVE on my own actual pages taught me way more than reading about accessibility ever did. Before this, I treated accessibility like a checklist you add at the end, not something baked into the code from the start. The redundant link alert was the one that surprised me most - I never thought about the fact that two links going to the same URL with different wording actually confuses screen reader users, since their software often lists all links on a page out of context, and two identical destinations with different names just adds noise. Fixing the stylesheet path was a good reminder that accessibility means nothing if the page isn't even rendering the way I designed it, since a broken `<link>` tag silently falls back to unstyled HTML with no warning. Rebuilding the contact form with real `label` elements, `fieldset`/`legend` grouping, and `aria-describedby` errors made me realize how much invisible structure goes into a form that "looks fine" visually but is unusable to someone who can't see the layout. Going forward, I want to run WAVE while I'm building, not after, and treat 0 errors as the baseline, not the finish line. This project changed how I think about who my code is actually for.
