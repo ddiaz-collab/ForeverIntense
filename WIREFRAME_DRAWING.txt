@@ -8,6 +8,15 @@ PROJECT SCOPE
 - Shared structure: skip link, sticky header with navigation, main content, footer.
 - About page includes an accessible contact form with labels, fieldsets, and error UI.
 
+FINAL COLOR PALETTE (single source of truth - matches site.css exactly, no other palette is used anywhere in this project)
+- Page background: #f5f0e7 (warm cream)
+- Card/panel surface: #fffaf2
+- Primary brand / accent: #0d3b66 (deep navy)
+- Strong brand (header gradient end, footer): #082742
+- Secondary accent (card border, CTA hover): #b4572b (warm terracotta)
+- Body text: #1b2632, muted text: #31485d
+- Border/line color: #9ab1c5
+
 ================================================================================
 1. SITE MAP (NAVIGATION FLOW)
 ================================================================================

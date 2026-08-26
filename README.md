@@ -27,6 +27,17 @@ Live URLs (all verified to render fully styled with the navy/cream palette):
 
 **Result after fixing all of the above:** running WAVE on all three live URLs returns **0 Errors, 0 Contrast Errors, and 0 Alerts** on every page (AIM Score 10/10).
 
+## Design Direction (One Palette, No Contradictions)
+
+Earlier drafts of this project had three different color plans in three different files (a navy/blue/gold plan in an old site-plan wireframe page, a dark-gray/gold plan in `WIREFRAME_DRAWING.txt`, and a teal/gold/sky-blue plan in an old `HOMEWORK2ccs.css`), and none of them were actually implemented on the live site. I picked one direction - the deep navy and warm cream palette - implemented it as CSS custom properties in `site.css`, and updated every other planning document to match those exact hex values so there is only one palette referenced anywhere in this repository:
+
+- Page background: `#f5f0e7`, card/panel surface: `#fffaf2`
+- Primary brand / accent: `#0d3b66` (deep navy)
+- Secondary accent: `#b4572b` (warm terracotta)
+- Body text: `#1b2632`, muted text: `#31485d`
+
+`wireframe.html` and `WIREFRAME_DRAWING.txt` now use these same hex values instead of the old, contradicting palettes.
+
 ## WCAG AA Contrast Validation (WebAIM Contrast Checker)
 
 1. `#1B2632` on `#FFFAF2` returned `14.7:1` (AA/AAA pass).
