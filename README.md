@@ -56,3 +56,17 @@ Earlier drafts of this project had three different color plans in three differen
 1. Every text input and textarea has a matching `label` element, so each control has a clear accessible name.
 2. `fieldset` and `legend` group the Preferred Service and Project Budget choices, so grouped controls are announced in context.
 3. Inline error text, `aria-describedby`, `aria-invalid`, and a `role="alert"` error summary give accessible, actionable error feedback.
+
+## Contact Form Validation Walkthrough (JavaScript, in my own words)
+
+All of this lives in the `<script>` block at the bottom of `about.html`.
+
+- `const form = ...`, `const fullName = ...`, `const email = ...`, `const message = ...` grab references to the form and its three single-value fields by ID, plus `serviceInputs`/`budgetInputs` grab the checkbox and radio groups with `querySelectorAll` wrapped in `Array.from()` so I can use array methods like `.some()` and `.forEach()` on them.
+- `fullNameError`, `emailError`, `serviceError`, `budgetError`, `messageError` grab each field's own error `<p>`, and `formErrors`/`successMessage` grab the whole-form summary and success messages.
+- `setFieldError(field, errorNode, hasError)` is my reusable helper for one input: it sets `aria-invalid` to `"true"` or `"false"` based on `hasError`, and sets `errorNode.hidden = !hasError` - this is exactly where an error message gets unhidden, since `hidden` flips to `false` the moment `hasError` is `true`.
+- `markGroup(inputs, hasError)` does the same job for a group of checkboxes/radios: it sets `aria-invalid="true"` on every input in the group when there's an error, or removes the attribute entirely when the group is valid, since `aria-invalid="false"` on every passing checkbox would be redundant noise.
+- Inside `form.addEventListener("submit", ...)`, `event.preventDefault()` stops the page from reloading so my script stays in control.
+- `nameInvalid`, `messageInvalid` check `.value.trim().length === 0` to catch empty fields; `emailInvalid` reads the browser's own `email.validity.valid`; `serviceInvalid`/`budgetInvalid` use `.some()` to check whether at least one input in each group is `.checked`, negated so `true` means nothing was selected.
+- I call `setFieldError` once per single field and `markGroup` once per group, which is what actually shows/hides each error message and sets/clears `aria-invalid` on submit, every time, for every field, based on its current state.
+- `hasErrors` ORs all five checks together; `formErrors.hidden`/`successMessage.hidden` are set from that so the right whole-form message shows.
+- If `hasErrors` is `true`, I use `.find()` on the first input of each field/group to locate whichever one currently has `aria-invalid="true"`, and call `.focus()` on it so the user (and a screen reader) lands directly on the first problem.
