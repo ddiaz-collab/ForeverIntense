@@ -102,7 +102,7 @@ Each project card:
 7. FILE INVENTORY FOR SUBMISSION
 ================================================================================
 
-- home.html
+- index.html
 - about.html
 - projects.html
 - site.css
