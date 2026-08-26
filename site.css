@@ -1,0 +1,361 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@400;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-page: #f5f0e7;
+    --color-surface: #fffaf2;
+    --color-surface-soft: #f2e6d4;
+    --color-brand: #0d3b66;
+    --color-brand-strong: #082742;
+    --color-accent: #b4572b;
+    --color-text: #1b2632;
+    --color-text-muted: #31485d;
+    --color-border: #9ab1c5;
+    --color-focus: #d17a22;
+    --color-error: #8a1538;
+    --shadow-card: 0 14px 30px rgba(13, 59, 102, 0.12);
+}
+
+body {
+    font-family: "Source Sans 3", "Trebuchet MS", sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background:
+        linear-gradient(125deg, rgba(180, 87, 43, 0.09), transparent 38%),
+        radial-gradient(circle at 92% 8%, rgba(13, 59, 102, 0.11), transparent 32%),
+        var(--color-page);
+}
+
+.skip-link {
+    position: absolute;
+    top: -6rem;
+    left: 1rem;
+    background: var(--color-brand-strong);
+    color: #ffffff;
+    padding: 0.7rem 1rem;
+    border-radius: 0.45rem;
+    z-index: 1000;
+    font-weight: 700;
+}
+
+.skip-link:focus-visible {
+    top: 1rem;
+}
+
+.site-header {
+    background: linear-gradient(90deg, var(--color-brand), var(--color-brand-strong));
+    color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 18px rgba(8, 39, 66, 0.32);
+}
+
+.header-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.site-title {
+    font-family: "DM Serif Display", Georgia, serif;
+    letter-spacing: 0.01em;
+    text-wrap: balance;
+    font-size: clamp(1.5rem, 2.7vw, 2rem);
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    color: #e9f1f8;
+    margin-bottom: 0.9rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+}
+
+nav a {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 999px;
+    padding: 0.35rem 0.8rem;
+}
+
+nav a:hover,
+nav a:focus-visible,
+nav a[aria-current="page"] {
+    color: var(--color-brand-strong);
+    background: #ffffff;
+    border-color: #ffffff;
+}
+
+main {
+    max-width: 1080px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.hero,
+.panel {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-card);
+}
+
+.hero {
+    padding: 2.2rem;
+    margin-bottom: 1.3rem;
+    border-left: 10px solid var(--color-accent);
+}
+
+.panel {
+    padding: 1.7rem;
+    margin-bottom: 1.3rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    text-wrap: balance;
+}
+
+h2,
+h3 {
+    font-family: "DM Serif Display", Georgia, serif;
+    margin-bottom: 0.6rem;
+    color: var(--color-brand-strong);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+}
+
+h3 {
+    margin-top: 1.15rem;
+    font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+}
+
+p,
+li {
+    color: var(--color-text-muted);
+}
+
+p + p {
+    margin-top: 0.8rem;
+}
+
+.section-intro {
+    font-size: 1.06rem;
+}
+
+.highlight-row,
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.highlight,
+.card {
+    background: var(--color-surface-soft);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 1rem;
+}
+
+.highlight {
+    border-top: 5px solid var(--color-brand);
+}
+
+.card {
+    border-left: 6px solid var(--color-accent);
+}
+
+.card h4,
+.highlight h3 {
+    color: var(--color-brand-strong);
+    margin-bottom: 0.35rem;
+}
+
+.button-link,
+button[type="submit"] {
+    display: inline-block;
+    background: var(--color-brand);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    border: 2px solid var(--color-brand);
+    font-weight: 700;
+    padding: 0.72rem 1.25rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.button-link:hover,
+.button-link:focus-visible,
+button[type="submit"]:hover,
+button[type="submit"]:focus-visible {
+    background: var(--color-brand-strong);
+    border-color: var(--color-brand-strong);
+}
+
+.text-link {
+    color: var(--color-brand-strong);
+    font-weight: 700;
+}
+
+.text-link:hover,
+.text-link:focus-visible {
+    color: var(--color-accent);
+}
+
+ul {
+    padding-left: 1.2rem;
+}
+
+blockquote {
+    margin-top: 1rem;
+    background: #fff3df;
+    border-left: 6px solid var(--color-accent);
+    border-radius: 0.65rem;
+    padding: 0.9rem 1rem;
+    color: var(--color-text);
+}
+
+.form-note {
+    margin-top: 0.4rem;
+    font-size: 0.95rem;
+}
+
+.form-row {
+    margin-top: 0.95rem;
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+    color: var(--color-text);
+}
+
+input,
+textarea,
+button {
+    font: inherit;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.62rem;
+    border-radius: 0.45rem;
+    border: 1px solid #6d8397;
+    background: #ffffff;
+    color: var(--color-text);
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+fieldset {
+    margin-top: 1rem;
+    border: 1px solid #6d8397;
+    border-radius: 0.55rem;
+    padding: 0.8rem;
+}
+
+legend {
+    font-weight: 700;
+    color: var(--color-brand-strong);
+    padding: 0 0.35rem;
+}
+
+.choice-grid {
+    display: grid;
+    gap: 0.45rem;
+}
+
+.choice-grid label {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.choice-grid input {
+    width: auto;
+}
+
+.helper-text {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+}
+
+.error-text {
+    color: var(--color-error);
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-top: 0.35rem;
+}
+
+[aria-invalid="true"] {
+    border: 2px solid var(--color-error);
+    background: #fff1f5;
+}
+
+.error-summary {
+    margin-top: 1rem;
+    background: #fff1f5;
+    border: 2px solid var(--color-error);
+    border-radius: 0.6rem;
+    padding: 0.75rem 0.85rem;
+    color: #66102a;
+}
+
+:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+}
+
+footer {
+    background: var(--color-brand-strong);
+    color: #ffffff;
+    text-align: center;
+    padding: 1.2rem 1rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    color: #ffffff;
+}
+
+@media (max-width: 720px) {
+    .hero {
+        padding: 1.5rem;
+    }
+
+    .panel {
+        padding: 1.2rem;
+    }
+
+    .site-title {
+        margin-bottom: 0.35rem;
+    }
+}

@@ -2,14 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="content-language" content="en">
-    <meta name="language" content="English">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About Domingo Diaz, including accessibility-focused workflow, front-end skills, and an accessible contact form.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://ddiaz-collab.github.io/ForeverIntense/Website_For_Teacher_2026-08-03/about.html">
     <title>About - Domingo Diaz Portfolio</title>
-    <link rel="stylesheet" href="../ccs/site.css">
+    <link rel="stylesheet" href="site.css">
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -19,7 +14,7 @@
         <p class="tagline">Accessible interfaces, clear structure, and dependable user flow.</p>
         <nav aria-label="Primary navigation">
             <ul>
-                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html" aria-current="page">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
             </ul>
@@ -36,7 +31,7 @@
 
         <section class="panel" aria-labelledby="skills-heading">
             <h3 id="skills-heading">Skills and Workflow</h3>
-            <div class="card-grid">
+            <div class="card-grid" aria-label="Skills and methods">
                 <article class="card">
                     <h4>Front-End Development</h4>
                     <p>HTML5, CSS3, JavaScript, responsive layout, and cross-device QA checks.</p>
@@ -56,7 +51,7 @@
             <h3 id="contact-heading">Contact Form</h3>
             <p>Send your project details and I will follow up with timeline and collaboration options.</p>
             <p id="contact-help" class="helper-text form-note">All required fields are marked with an asterisk.</p>
-            <form id="contact-form" novalidate aria-describedby="contact-help">
+            <form id="contact-form" novalidate aria-describedby="contact-help form-errors">
                 <div class="form-row">
                     <label for="full-name">Full Name *</label>
                     <input id="full-name" name="full-name" type="text" autocomplete="name" required aria-describedby="name-error">
@@ -71,7 +66,7 @@
 
                 <fieldset>
                     <legend>Preferred Service *</legend>
-                    <div class="choice-grid" aria-describedby="service-error">
+                    <div class="choice-grid" role="group" aria-describedby="service-error">
                         <label for="service-design"><input id="service-design" type="checkbox" name="service" value="Design Planning"> Design Planning</label>
                         <label for="service-build"><input id="service-build" type="checkbox" name="service" value="Website Build"> Website Build</label>
                         <label for="service-accessibility"><input id="service-accessibility" type="checkbox" name="service" value="Accessibility Audit"> Accessibility Audit</label>
@@ -81,7 +76,7 @@
 
                 <fieldset>
                     <legend>Project Budget Range *</legend>
-                    <div class="choice-grid" aria-describedby="budget-error">
+                    <div class="choice-grid" role="radiogroup" aria-describedby="budget-error">
                         <label for="budget-1"><input id="budget-1" name="budget" type="radio" value="Under $500" required> Under $500</label>
                         <label for="budget-2"><input id="budget-2" name="budget" type="radio" value="$500 to $1500"> $500 to $1500</label>
                         <label for="budget-3"><input id="budget-3" name="budget" type="radio" value="$1500 and above"> $1500 and above</label>
@@ -109,12 +104,6 @@
 
     <footer>
         <p>&copy; 2026 Domingo Diaz. All rights reserved.</p>
-        <p><a href="https://wave.webaim.org/">Check accessibility with WAVE</a></p>
-        <p>
-            <a href="https://wave.webaim.org/">
-                <img src="wave-badge.svg" alt="WAVE accessibility checker website">
-            </a>
-        </p>
     </footer>
 
     <script>

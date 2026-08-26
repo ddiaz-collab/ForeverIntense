@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Blueprint - Teacher Website</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --ink: #1a2430;
+            --line: #506274;
+            --paper: #f7f3ea;
+            --block: #ffffff;
+            --accent: #0d3b66;
+            --accent-soft: #dce7f2;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            padding: 1.25rem;
+            line-height: 1.45;
+        }
+
+        .wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: var(--block);
+            border: 2px solid var(--line);
+            border-radius: 10px;
+            padding: 1.2rem;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            margin-bottom: 0.7rem;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            margin: 1rem 0 0.5rem;
+            border-left: 6px solid var(--accent);
+            padding-left: 0.5rem;
+        }
+
+        p,
+        li {
+            color: #304255;
+        }
+
+        .note {
+            background: var(--accent-soft);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 0.7rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .grid {
+            display: grid;
+            gap: 0.8rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .panel {
+            border: 2px dashed var(--line);
+            border-radius: 8px;
+            padding: 0.7rem;
+            background: #fafcff;
+        }
+
+        .panel h3 {
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .box {
+            border: 2px solid var(--line);
+            border-radius: 6px;
+            background: #ffffff;
+            padding: 0.45rem;
+            margin: 0.35rem 0;
+            font-size: 0.95rem;
+        }
+
+        .mobile {
+            max-width: 340px;
+        }
+
+        ul {
+            padding-left: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <main class="wrap">
+        <h1>Website Wireframe Blueprint</h1>
+        <p class="note">This wireframe matches the current three-page submission: Home, About (with accessible contact form), and Projects.</p>
+
+        <h2>1. Global Site Structure</h2>
+        <section class="grid" aria-label="Global structure">
+            <article class="panel">
+                <h3>Shared Header (All Pages)</h3>
+                <div class="box">Skip Link</div>
+                <div class="box">Site Title + Tagline</div>
+                <div class="box">Primary Nav: Home | About | Projects</div>
+            </article>
+
+            <article class="panel">
+                <h3>Shared Footer (All Pages)</h3>
+                <div class="box">Copyright</div>
+                <div class="box">Consistent Brand Colors</div>
+            </article>
+
+            <article class="panel">
+                <h3>Navigation Flow</h3>
+                <div class="box">Home -> Projects</div>
+                <div class="box">Home -> About</div>
+                <div class="box">About -> Projects</div>
+                <div class="box">Projects -> About</div>
+            </article>
+        </section>
+
+        <h2>2. Desktop Layout Wireframe</h2>
+        <section class="panel" aria-label="Desktop blueprint">
+            <div class="box">[ Header: Skip Link | Title | Tagline | Nav ]</div>
+            <div class="box">[ Hero Section: Page Heading + Intro + Primary CTA ]</div>
+            <div class="box">[ Panel Section: Card Grid (3 or 4 cards depending on page) ]</div>
+            <div class="box">[ About Page Only: Contact Form Module ]</div>
+            <div class="box">[ Footer ]</div>
+        </section>
+
+        <h2>3. About Page Contact Form Wireframe</h2>
+        <section class="panel" aria-label="Contact form blueprint">
+            <div class="box">Label + Text Input: Full Name (required)</div>
+            <div class="box">Label + Email Input: Email (required)</div>
+            <div class="box">Fieldset + Legend: Preferred Service (checkbox group)</div>
+            <div class="box">Fieldset + Legend: Project Budget (radio group)</div>
+            <div class="box">Label + Textarea: Message (required)</div>
+            <div class="box">Error Summary (role=alert) + Inline Error Messages</div>
+            <div class="box">Submit Button + Success Message Area</div>
+        </section>
+
+        <h2>4. Mobile Layout Wireframe</h2>
+        <section class="grid" aria-label="Mobile blueprint">
+            <article class="panel mobile">
+                <h3>Home Mobile</h3>
+                <div class="box">Header stack</div>
+                <div class="box">Hero content in one column</div>
+                <div class="box">Three highlight cards stacked</div>
+                <div class="box">Footer</div>
+            </article>
+
+            <article class="panel mobile">
+                <h3>About Mobile</h3>
+                <div class="box">Intro block</div>
+                <div class="box">Skill cards stacked</div>
+                <div class="box">Form fields full width</div>
+                <div class="box">Footer</div>
+            </article>
+
+            <article class="panel mobile">
+                <h3>Projects Mobile</h3>
+                <div class="box">Hero intro</div>
+                <div class="box">Project cards stacked</div>
+                <div class="box">Return CTA</div>
+                <div class="box">Footer</div>
+            </article>
+        </section>
+
+        <h2>5. Content Inventory</h2>
+        <section class="panel" aria-label="Content inventory">
+            <ul>
+                <li>index.html: hero mission + focus area cards</li>
+                <li>about.html: bio + skills + accessible contact form</li>
+                <li>projects.html: project card showcase</li>
+                <li>site.css: shared design system and responsive rules</li>
+                <li>README.md: WAVE fixes, contrast checks, Gestalt labels</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

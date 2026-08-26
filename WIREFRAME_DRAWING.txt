@@ -1,284 +1,115 @@
 ================================================================================
-                    WEBSITE WIREFRAME DRAWING
-                  Three-Page Portfolio Website Structure
+                      WEBSITE WIREFRAME DRAWING
+                 Accessible Three-Page Portfolio Blueprint
 ================================================================================
 
-PROJECT OVERVIEW:
-This three-page website demonstrates proper HTML structure, navigation, and 
-site architecture. All pages are interconnected and share consistent design.
+PROJECT SCOPE
+- Three pages: Home, About, Projects.
+- Shared structure: skip link, sticky header with navigation, main content, footer.
+- About page includes an accessible contact form with labels, fieldsets, and error UI.
 
 ================================================================================
-1. SITE NAVIGATION STRUCTURE (How Pages Connect)
+1. SITE MAP (NAVIGATION FLOW)
 ================================================================================
 
-                        ┌─────────────────────────────┐
-                        │   NAVIGATION MENU (HEADER)  │
-                        │  Home | About | Projects    │
-                        └─────────────────────────────┘
-                             ↙          ↓          ↘
-                             
-         ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐
-         │                  │  │                  │  │                  │
-         │    📄 HOME       │  │   👤 ABOUT       │  │  🔧 PROJECTS     │
-         │    PAGE          │  │   PAGE           │  │  PAGE            │
-         │                  │  │                  │  │                  │
-         │  Welcome &       │  │  Background &    │  │  Portfolio &     │
-         │  Introduction    │  │  Skills Showcase │  │  Project Cards   │
-         │                  │  │                  │  │                  │
-         └──────────────────┘  └──────────────────┘  └──────────────────┘
+                    +-----------------------------------+
+                    | SHARED HEADER / PRIMARY NAV       |
+                    | Home | About | Projects           |
+                    +-----------------------------------+
+                          /            |            \
+                         /             |             \
+            +----------------+   +----------------+   +----------------+
+            | HOME PAGE      |   | ABOUT PAGE     |   | PROJECTS PAGE  |
+            | hero + cards   |   | bio + form     |   | project cards  |
+            +----------------+   +----------------+   +----------------+
 
-         All pages accessible from each other via the Navigation Menu
-
+Navigation is available on all pages so users can jump directly to any section.
 
 ================================================================================
-2. INDIVIDUAL PAGE LAYOUT (Blueprint for Each Page)
+2. GLOBAL PAGE FRAME (DESKTOP)
 ================================================================================
 
-    ╔════════════════════════════════════════════════════════════════╗
-    ║                                                                ║
-    ║  ┌──────────────────────────────────────────────────────────┐ ║
-    ║  │                       HEADER                             │ ║
-    ║  │                  Site Title / Logo                       │ ║
-    ║  │                                                          │ ║
-    ║  │  🏠 Home  |  👤 About  |  🔧 Projects                   │ ║
-    ║  │            (Navigation Menu)                            │ ║
-    ║  └──────────────────────────────────────────────────────────┘ ║
-    ║                                                                ║
-    ║  ┌──────────────────────────────────────────────────────────┐ ║
-    ║  │                                                          │ ║
-    ║  │                    MAIN CONTENT                          │ ║
-    ║  │                                                          │ ║
-    ║  │  ┌─────────────────────────────────────────────────┐    │ ║
-    ║  │  │  Page Section Title                             │    │ ║
-    ║  │  │                                                 │    │ ║
-    ║  │  │  • Main heading and introduction text           │    │ ║
-    ║  │  │  • Key content and information                  │    │ ║
-    ║  │  │  • Features, skills, or project descriptions   │    │ ║
-    ║  │  │  • Call-to-action buttons (linked to other     │    │ ║
-    ║  │  │    pages or content sections)                  │    │ ║
-    ║  │  │                                                 │    │ ║
-    ║  │  └─────────────────────────────────────────────────┘    │ ║
-    ║  │                                                          │ ║
-    ║  └──────────────────────────────────────────────────────────┘ ║
-    ║                                                                ║
-    ║  ┌──────────────────────────────────────────────────────────┐ ║
-    ║  │                       FOOTER                             │ ║
-    ║  │            © 2026 Domingo Diaz. All rights reserved.     │ ║
-    ║  └──────────────────────────────────────────────────────────┘ ║
-    ║                                                                ║
-    ╚════════════════════════════════════════════════════════════════╝
-
++----------------------------------------------------------------------------+
+| [Skip to main content]                                                     |
+|----------------------------------------------------------------------------|
+| Header: Site Title + Tagline + Home/About/Projects nav                    |
+|----------------------------------------------------------------------------|
+| Main                                                                        |
+|  +------------------------------------------------------------------------+ |
+|  | Hero block: page heading + short intro + call to action              | |
+|  +------------------------------------------------------------------------+ |
+|  +------------------------------------------------------------------------+ |
+|  | Content panel: cards or form section depending on page               | |
+|  +------------------------------------------------------------------------+ |
+|----------------------------------------------------------------------------|
+| Footer: copyright                                                          |
++----------------------------------------------------------------------------+
 
 ================================================================================
-3. SPECIFIC PAGE DETAILS
+3. HOME PAGE WIREFRAME
 ================================================================================
 
-┌─ HOME PAGE ─────────────────────────────────────────────────────────────┐
-│                                                                         │
-│  HEADER:  Navigation with "Home" highlighted as current page           │
-│                                                                         │
-│  CONTENT:                                                               │
-│  ┌─────────────────────────────────────────────────────────────────┐   │
-│  │ Welcome Section                                                 │   │
-│  │ • Welcome message to visitors                                   │   │
-│  │ • Overview of the three-page website structure                 │   │
-│  │ • Brief description of what visitors will find                 │   │
-│  │ • [Learn More About Me →] Button (links to About page)         │   │
-│  └─────────────────────────────────────────────────────────────────┘   │
-│                                                                         │
-│  FOOTER:  Copyright information                                        │
-│                                                                         │
-└─────────────────────────────────────────────────────────────────────────┘
+- Hero: mission statement + CTA to projects.
+- Focus panel: three highlight cards.
+- Quote block.
 
-┌─ ABOUT PAGE ────────────────────────────────────────────────────────────┐
-│                                                                         │
-│  HEADER:  Navigation with "About" highlighted as current page          │
-│                                                                         │
-│  CONTENT:                                                               │
-│  ┌─────────────────────────────────────────────────────────────────┐   │
-│  │ About Section                                                   │   │
-│  │ • Personal introduction                                         │   │
-│  │ • Background information                                        │   │
-│  │                                                                 │   │
-│  │ Skills Grid (3-column layout):                                 │   │
-│  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐            │   │
-│  │  │ Front-End   │  │ Web Design  │  │ Project     │            │   │
-│  │  │ Development │  │             │  │ Management  │            │   │
-│  │  └─────────────┘  └─────────────┘  └─────────────┘            │   │
-│  │                                                                 │   │
-│  │ • Passion and goals                                             │   │
-│  │ • [View My Projects →] Button (links to Projects page)         │   │
-│  └─────────────────────────────────────────────────────────────────┘   │
-│                                                                         │
-│  FOOTER:  Copyright information                                        │
-│                                                                         │
-└─────────────────────────────────────────────────────────────────────────┘
-
-┌─ PROJECTS PAGE ─────────────────────────────────────────────────────────┐
-│                                                                         │
-│  HEADER:  Navigation with "Projects" highlighted as current page       │
-│                                                                         │
-│  CONTENT:                                                               │
-│  ┌─────────────────────────────────────────────────────────────────┐   │
-│  │ Projects Gallery (3-column responsive grid):                    │   │
-│  │                                                                 │   │
-│  │ ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │   │
-│  │ │ Project 1    │  │ Project 2    │  │ Project 3    │           │   │
-│  │ │ Portfolio    │  │ E-Commerce   │  │ Blog Platform│           │   │
-│  │ │ [View →]     │  │ [View →]     │  │ [View →]     │           │   │
-│  │ └──────────────┘  └──────────────┘  └──────────────┘           │   │
-│  │                                                                 │   │
-│  │ ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │   │
-│  │ │ Project 4    │  │ Project 5    │  │ Project 6    │           │   │
-│  │ │ Multi-Page   │  │ Responsive   │  │ Interactive  │           │   │
-│  │ │ [View →]     │  │ [View →]     │  │ [View →]     │           │   │
-│  │ └──────────────┘  └──────────────┘  └──────────────┘           │   │
-│  │                                                                 │   │
-│  │ • [← Back to About] Button                                      │   │
-│  └─────────────────────────────────────────────────────────────────┘   │
-│                                                                         │
-│  FOOTER:  Copyright information                                        │
-│                                                                         │
-└─────────────────────────────────────────────────────────────────────────┘
-
+Home content modules:
+1) Hero headline and intro paragraph.
+2) Three focus cards (accessible, architecture, consistency).
+3) Supporting quote block.
 
 ================================================================================
-4. FILE STRUCTURE & PROJECT ORGANIZATION
+4. ABOUT PAGE WIREFRAME (INCLUDES CONTACT FORM)
 ================================================================================
 
-📁 C:\Users\Kingm\Downloads\
-│
-├── 📄 home.html
-│   └── Landing page with introduction and navigation
-│
-├── 📄 about.html
-│   └── Personal information and skills showcase
-│
-├── 📄 projects.html
-│   └── Portfolio projects in grid layout
-│
-└── 📊 wireframe.html
-    └── This wireframe diagram (for reference)
+- Intro hero: personal background.
+- Skills panel: card grid.
+- Contact panel: accessible form.
 
+Contact form structure:
+1) Full Name input with label and inline error text.
+2) Email input with label and inline error text.
+3) Fieldset + legend for Preferred Service checkboxes.
+4) Fieldset + legend for Project Budget radio options.
+5) Message textarea with label and inline error text.
+6) Error summary (role=alert) and submit button.
+7) Success message area.
 
 ================================================================================
-5. KEY DESIGN FEATURES
+5. PROJECTS PAGE WIREFRAME
 ================================================================================
 
-✓ CONSISTENT STYLING
-  • Same header, footer, and color scheme on all pages
-  • Consistent font family and spacing
-  • Professional dark theme (#333 background)
+- Hero intro paragraph.
+- Project showcase grid with 4 cards.
+- Return CTA to About page.
 
-✓ RESPONSIVE LAYOUT
-  • Works on desktop, tablet, and mobile devices
-  • Uses CSS Grid and Flexbox for flexible layouts
-  • Adjusts content width based on screen size
-
-✓ NAVIGATION
-  • Sticky header stays visible when scrolling
-  • Current page highlighted in navigation menu
-  • Easy links between all pages
-
-✓ ACCESSIBILITY
-  • Semantic HTML5 structure
-  • Proper heading hierarchy
-  • Good color contrast for readability
-  • Descriptive link text
-
-✓ USER EXPERIENCE
-  • Clear call-to-action buttons
-  • Hover effects on interactive elements
-  • Organized content in logical sections
-  • Cards/boxes for visual organization
-
+Each project card:
+1) Project title.
+2) Tech stack line.
+3) Short description.
+4) Text link.
 
 ================================================================================
-6. NAVIGATION FLOW & USER JOURNEY
+6. MOBILE ADAPTATION
 ================================================================================
 
-ENTRY POINT:
-  1. User opens home.html
-  2. Sees welcome message and site overview
-  3. Can navigate via menu to About or Projects
-
-TYPICAL USER JOURNEY:
-
-  Home Page                About Page              Projects Page
-       ↓                       ↓                        ↓
-  [View Site Overview]   [Learn Background]     [See Portfolio]
-       ↓                       ↓                        ↓
-  [Learn More →]          [View Projects →]     [Back to About ←]
-       ↓                       ↓                        ↓
-  ──────────────────────────────────────────────────────────
-        Navigation Menu Always Available
-        Users can jump between pages anytime
-
+- Header stacks naturally with wrapped nav links.
+- Card grids collapse into one-column stack.
+- Form controls remain full width for easier touch and readability.
+- Spacing contracts to keep content legible on small screens.
 
 ================================================================================
-7. COLOR & STYLING SCHEME
+7. FILE INVENTORY FOR SUBMISSION
 ================================================================================
 
-Primary Colors:
-  • Header/Footer Background:  #333 (Dark Gray)
-  • Text Color:                #333 (Dark Gray)
-  • Link Color:                #fff (White)
-  • Hover Color:               #ffd700 (Gold)
-  • Active Navigation:         #ffd700 (Gold with underline)
-
-Section Colors:
-  • Page Content Background:   #fff (White)
-  • Skill Boxes Background:    #f9f9f9 (Light Gray)
-  • Project Cards Background:  #f9f9f9 (Light Gray)
-  • Section Shadow:            rgba(0,0,0,0.1)
-
-Responsive Breakpoints:
-  • Desktop:  Full width layout
-  • Tablet:   Adjusted spacing and font sizes
-  • Mobile:   Single column, stacked layout
-
+- home.html
+- about.html
+- projects.html
+- site.css
+- README.md
+- wireframe.html
+- WIREFRAME_DRAWING.txt
 
 ================================================================================
-8. INTERACTIVE ELEMENTS
-================================================================================
-
-BUTTONS:
-  • "Learn More About Me" (Home → About)
-  • "View My Projects" (About → Projects)
-  • "Back to About" (Projects → About)
-  • Individual project "View" links
-
-HOVER EFFECTS:
-  • Navigation links turn gold on hover
-  • Project cards lift up slightly on hover
-  • Buttons change background color
-
-NAVIGATION MENU:
-  • Shows current page with gold highlight and underline
-  • Links to other pages remove the highlight
-
-
-================================================================================
-SUMMARY
-================================================================================
-
-This wireframe documents a professional three-page website with:
-  ✓ Clear navigation connecting all pages
-  ✓ Consistent design across all pages
-  ✓ Responsive layout for all devices
-  ✓ Professional styling and color scheme
-  ✓ User-friendly navigation and call-to-action elements
-  ✓ Complete file structure ready for use
-
-All files are located in: C:\Users\Kingm\Downloads\
-
-Files Ready to Use:
-  • home.html (Start here!)
-  • about.html
-  • projects.html
-  • wireframe.html (This document)
-
-================================================================================
-Created: August 3, 2026
-For: Domingo Diaz Web Development Project
+END OF WIREFRAME
 ================================================================================

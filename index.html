@@ -2,76 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="content-language" content="en">
-    <meta name="language" content="English">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Landing page with direct URL links to portfolio sections.">
-    <meta name="robots" content="index, follow">
-    <title>Portfolio URL Links</title>
-    <link rel="stylesheet" href="ccs/site.css">
+    <title>Home - Domingo Diaz Portfolio</title>
+    <link rel="stylesheet" href="site.css">
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
         <div class="header-inner">
-            <h1 class="site-title">Domingo Diaz - Portfolio URL Links</h1>
-            <p class="tagline">Open any page directly from this link hub.</p>
-            <nav aria-label="Primary navigation">
-                <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                </ul>
-            </nav>
+        <h1 class="site-title">Domingo Diaz - Purpose-Driven Web Design</h1>
+        <p class="tagline">Accessible interfaces, clear structure, and dependable user flow.</p>
+        <nav aria-label="Primary navigation">
+            <ul>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </nav>
         </div>
     </header>
 
     <main id="main-content">
-        <section class="hero">
-            <h2>Direct URL Links</h2>
-            <p class="section-intro">Use these links to open your pages and accessibility checker quickly.</p>
+        <section class="hero" id="home">
+            <h2>Build Websites People Can Actually Use</h2>
+            <p class="section-intro">I design and code websites that feel confident, organized, and readable for everyone, including keyboard and screen-reader users.</p>
+            <p>Each page in this portfolio follows semantic HTML, predictable navigation, and contrast-safe styling so content is easy to find and actions are easy to complete.</p>
+            <a href="projects.html" class="button-link">Explore Featured Projects</a>
         </section>
 
-        <section class="panel about-me-panel" aria-labelledby="about-me-heading">
-            <h3 id="about-me-heading">About Me</h3>
-            <p>
-                I am Domingo Diaz, and this portfolio shows my website work, accessibility updates, and class projects.
-                Use this outside page as your launch pad to open every important file quickly.
-            </p>
-        </section>
-
-        <section class="panel" aria-labelledby="url-links-heading">
-            <h3 id="url-links-heading">Site Links</h3>
-            <ul>
-                <li><a href="home.html">home.html</a></li>
-                <li><a href="about.html">about.html</a></li>
-                <li><a href="projects.html">projects.html</a></li>
-                <li><a href="wireframe/wireframe.html">wireframe/wireframe.html</a></li>
-                <li><a href="https://wave.webaim.org/">WAVE Accessibility Tool</a></li>
-                <li><a href="https://ddiaz-collab.github.io/ForeverIntense/">Public URL for index.html</a></li>
-                <li><a href="https://ddiaz-collab.github.io/ForeverIntense/home.html">Public URL for home.html</a></li>
-                <li><a href="https://ddiaz-collab.github.io/ForeverIntense/about.html">Public URL for about.html</a></li>
-                <li><a href="projects.html">projects.html (outside local until publish)</a></li>
-                <li><a href="wireframe/wireframe.html">wireframe/wireframe.html (outside local until publish)</a></li>
-                <li><a href="https://wave.webaim.org/report#/https://ddiaz-collab.github.io/ForeverIntense/">Run WAVE on index.html URL</a></li>
-                <li><a href="https://wave.webaim.org/report#/https://ddiaz-collab.github.io/ForeverIntense/home.html">Run WAVE on home.html URL</a></li>
-                <li><a href="https://wave.webaim.org/report#/https://ddiaz-collab.github.io/ForeverIntense/about.html">Run WAVE on about.html URL</a></li>
-            </ul>
-        </section>
-
-        <section class="panel" aria-labelledby="outside-links-heading">
-            <h3 id="outside-links-heading">More Outside Pages</h3>
-            <p class="section-intro">These files are outside the website folder and open directly from this workspace root.</p>
-            <ul>
-                <li><a href="home.html">home.html (outside)</a></li>
-                <li><a href="about.html">about.html (outside)</a></li>
-                <li><a href="projects.html">projects.html (outside)</a></li>
-                <li><a href="wireframe/wireframe.html">wireframe/wireframe.html (outside folder)</a></li>
-                <li><a href="HOMEWORK2.html">HOMEWORK2.html</a></li>
-                <li><a href="HOMEWORK2assigment3andassigment4.html">HOMEWORK2 assignment page</a></li>
-                <li><a href="ForeverIntense.htm">ForeverIntense.htm</a></li>
-                <li><a href="README.md">README.md</a></li>
-            </ul>
+        <section class="panel" aria-labelledby="focus-areas-heading">
+            <h3 id="focus-areas-heading">Three Focus Areas</h3>
+            <div class="highlight-row" aria-label="Service highlights">
+                <article class="highlight">
+                    <h3>Accessible by Default</h3>
+                    <p>I start with landmarks, heading order, and keyboard support before visual polish.</p>
+                </article>
+                <article class="highlight">
+                    <h3>Clear Architecture</h3>
+                    <p>Pages are grouped into clear regions so users can scan quickly and decide what to do next.</p>
+                </article>
+                <article class="highlight">
+                    <h3>Consistent Style Language</h3>
+                    <p>The same palette, spacing rhythm, and typography create confidence across every page.</p>
+                </article>
+            </div>
+            <blockquote>Great design is not decoration; it is guidance.</blockquote>
         </section>
     </main>
 
