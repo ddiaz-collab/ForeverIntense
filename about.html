@@ -28,6 +28,8 @@
             <h2>About Me</h2>
             <p class="section-intro">I am a web developer who combines visual design choices with practical accessibility standards so people can move through a website without friction.</p>
             <p>My process blends layout planning, semantic HTML, contrast validation, and usability testing to deliver pages that are both expressive and dependable.</p>
+            <button id="process-toggle" type="button" aria-expanded="false" aria-controls="process-details">Show process details</button>
+            <p id="process-details" hidden>My process starts with a clear structure, then adds accessible interaction and visual polish.</p>
         </section>
 
         <section class="panel" aria-labelledby="skills-heading">
@@ -111,71 +113,6 @@
         </div>
     </footer>
 
-    <script>
-        const form = document.getElementById("contact-form");
-        const fullName = document.getElementById("full-name");
-        const email = document.getElementById("email");
-        const message = document.getElementById("message");
-        const serviceInputs = Array.from(document.querySelectorAll("input[name='service']"));
-        const budgetInputs = Array.from(document.querySelectorAll("input[name='budget']"));
-        const fullNameError = document.getElementById("name-error");
-        const emailError = document.getElementById("email-error");
-        const serviceError = document.getElementById("service-error");
-        const budgetError = document.getElementById("budget-error");
-        const messageError = document.getElementById("message-error");
-        const formErrors = document.getElementById("form-errors");
-        const successMessage = document.getElementById("success-message");
-
-        function setFieldError(field, errorNode, hasError) {
-            field.setAttribute("aria-invalid", hasError ? "true" : "false");
-            errorNode.hidden = !hasError;
-        }
-
-        function markGroup(inputs, hasError) {
-            inputs.forEach(function (input) {
-                if (hasError) {
-                    input.setAttribute("aria-invalid", "true");
-                } else {
-                    input.removeAttribute("aria-invalid");
-                }
-            });
-        }
-
-        form.addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            const nameInvalid = fullName.value.trim().length === 0;
-            const emailInvalid = !email.validity.valid;
-            const messageInvalid = message.value.trim().length === 0;
-            const serviceInvalid = !serviceInputs.some(function (input) {
-                return input.checked;
-            });
-            const budgetInvalid = !budgetInputs.some(function (input) {
-                return input.checked;
-            });
-
-            setFieldError(fullName, fullNameError, nameInvalid);
-            setFieldError(email, emailError, emailInvalid);
-            setFieldError(message, messageError, messageInvalid);
-            serviceError.hidden = !serviceInvalid;
-            budgetError.hidden = !budgetInvalid;
-            markGroup(serviceInputs, serviceInvalid);
-            markGroup(budgetInputs, budgetInvalid);
-
-            const hasErrors = nameInvalid || emailInvalid || serviceInvalid || budgetInvalid || messageInvalid;
-            formErrors.hidden = !hasErrors;
-            successMessage.hidden = hasErrors;
-
-            if (hasErrors) {
-                const firstInvalid = [fullName, email, serviceInputs[0], budgetInputs[0], message].find(function (field) {
-                    return field.getAttribute("aria-invalid") === "true";
-                });
-
-                if (firstInvalid) {
-                    firstInvalid.focus();
-                }
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

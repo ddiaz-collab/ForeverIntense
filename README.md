@@ -1,5 +1,7 @@
 # Domingo Diaz Portfolio - Accessibility and Design Milestone
 
+**Submitted GitHub Pages URL:** https://ddiaz-collab.github.io/ForeverIntense/
+
 ## Site Structure
 
 The live site is three flat HTML files sharing one stylesheet, all committed directly to the repository root (no zip archives, no duplicate copies):
