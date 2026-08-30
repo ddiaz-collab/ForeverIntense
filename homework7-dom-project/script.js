@@ -37,7 +37,7 @@ const contactFields = [
         { input: document.querySelector("#contactName"), error: document.querySelector("#nameError"),
             message: "Please enter your name." },
         { input: document.querySelector("#contactEmail"), error: document.querySelector("#emailError"),
-            message: "Please enter a valid email address." },
+            message: "Please enter a valid email address (e.g., ddiaz@my.campus.edu)." },
         { input: document.querySelector("#contactMessage"), error: document.querySelector("#messageError"),
             message: "Please enter a message." }
 ];
