@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Domingo Diaz Jr.">
+    <meta name="description" content="Domingo Diaz Jr.'s class project contact webpage.">
+    <title>Contact Page</title>
+    <style>
+        body {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 32px 20px;
+            font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+            line-height: 1.5;
+            color: #b8860b;
+            text-shadow: 1px 1px 1px #000000;
+            position: relative;
+            isolation: isolate;
+            background: repeating-linear-gradient(
+                to bottom,
+                #bf0a30 0,
+                #bf0a30 7.7%,
+                #ffffff 7.7%,
+                #ffffff 15.4%
+            );
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            left: 0;
+            width: 42%;
+            height: 53.8%;
+            background-color: #002868;
+            background-image: radial-gradient(circle, #ffffff 1.8px, transparent 2px);
+            background-size: 20px 20px;
+        }
+
+        body::after {
+            content: "🦅   ✝   🦁   ✝ 🫏       🦅   ✝   🦁   ✝ 🫏";
+            position: fixed;
+            z-index: 0;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffd700;
+            font-size: clamp(2rem, 6vw, 4rem);
+            letter-spacing: 0.75rem;
+            opacity: 0.32;
+            pointer-events: none;
+            text-align: center;
+            text-shadow: 2px 2px 2px #002868;
+        }
+
+        body > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .personal-info {
+            color: #b8860b;
+            font-weight: bold;
+        }
+
+        #toggleDetails,
+        #addThing,
+        button[type="submit"] {
+            padding: 8px 14px;
+            cursor: pointer;
+            background-color: #002868;
+            color: #fff;
+            border: 1px solid #bf0a30;
+            border-radius: 4px;
+        }
+
+        #toggleDetails:hover,
+        #addThing:hover,
+        button[type="submit"]:hover {
+            background-color: #bf0a30;
+        }
+
+        form {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid #ccc;
+        }
+
+        label,
+        input,
+        textarea {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input,
+        textarea {
+            margin: 4px 0 12px;
+            padding: 8px;
+            border: 1px solid #ffd700;
+            border-radius: 4px;
+            font-family: inherit;
+            color: #ffd700;
+            background-color: #000000;
+        }
+
+        textarea {
+            min-height: 90px;
+        }
+
+        .input-valid {
+            border-color: teal;
+        }
+
+        li button {
+            background-color: #bf0a30;
+            color: #fff;
+            border: 1px solid #8a0018;
+            border-radius: 4px;
+            padding: 4px 8px;
+            cursor: pointer;
+        }
+
+        li button:hover {
+            background-color: #8a0018;
+        }
+
+        p[role="alert"] {
+            color: #bf0a30;
+            margin: -8px 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Contact Page</h1>
+    <p class="personal-info">If you have any questions, please contact me at <a href="mailto:ddiaz@my.campus.edu">ddiaz@my.campus.edu</a>.</p>
+    <p class="personal-info">View my project on <a href="https://github.com/ddiaz-collab/ForeverIntense" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+
+    <section class="personal-info" aria-labelledby="aboutHeading">
+        <h2 id="aboutHeading">About Me</h2>
+        <p>I am Domingo Diaz Jr., a motivated student who is developing my skills in HTML, CSS, and JavaScript. This project shows my ability to build an interactive webpage with form validation, user feedback, and information from a public online service.</p>
+        <p>My goal is to continue learning how to create webpages that are clear, useful, and easy for people to use.</p>
+    </section>
+
+    <section>
+        <h2>Things to do</h2>
+        <label for="thingInput">Add an item</label>
+        <input id="thingInput" type="text">
+        <button id="addThing" type="button">Add</button>
+        <ul id="thingsList"></ul>
+    </section>
+
+    <form id="contactForm" novalidate>
+        <h2>Contact me</h2>
+        <label for="contactName">Contact Name</label>
+        <input id="contactName" name="name" type="text" value="Domingo Diaz Jr" autocomplete="name" required aria-describedby="nameError">
+        <p id="nameError" role="alert"></p>
+
+        <label for="contactEmail">Contact Email</label>
+        <input id="contactEmail" name="email" type="email" value="ddiaz@my.campus.edu" autocomplete="email" required aria-describedby="emailError">
+        <p id="emailError" role="alert"></p>
+
+        <label for="contactPhone">Contact Phone</label>
+        <input id="contactPhone" name="phone" type="tel" autocomplete="tel" aria-describedby="phoneError">
+        <p id="phoneError" role="alert"></p>
+
+        <label for="contactMessage">Contact Message</label>
+        <textarea id="contactMessage" name="message" required aria-describedby="messageError">Let's all grow</textarea>
+        <p id="messageError" role="alert"></p>
+
+        <button type="submit">Send message</button>
+        <p id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+
+    <section aria-labelledby="adviceHeading">
+        <h2 id="adviceHeading">Advice from Domingo</h2>
+        <p id="adviceMessage" aria-live="polite">Submit a valid message to receive a piece of advice.</p>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
