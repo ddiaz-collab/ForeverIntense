@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Interaction</title>
+    <style>
+        body {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 32px 20px;
+            font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+            line-height: 1.5;
+            font-weight: 700;
+            color: #ffd700;
+            text-shadow: 1px 1px 0 #0047ab, 2px 2px 3px #001f5b;
+            background-color: #4169e1;
+            background-image:
+                radial-gradient(ellipse at 12% 14%, rgba(255, 255, 255, 0.9) 0 7%, transparent 7.5%),
+                radial-gradient(ellipse at 20% 15%, rgba(255, 255, 255, 0.9) 0 9%, transparent 9.5%),
+                radial-gradient(ellipse at 80% 30%, rgba(255, 255, 255, 0.85) 0 8%, transparent 8.5%),
+                radial-gradient(ellipse at 88% 29%, rgba(255, 255, 255, 0.85) 0 10%, transparent 10.5%),
+                linear-gradient(#2f66d0, #7fb3ff 55%, #2f66d0);
+            background-attachment: fixed;
+        }
+
+        h1,
+        h2 {
+            color: #ffd700;
+            text-shadow: 2px 2px 0 #003f8c, 4px 4px 0 #001f5b, 6px 6px 8px rgba(0, 0, 0, 0.55);
+        }
+
+        label,
+        input,
+        button {
+            display: block;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            margin: 4px 0 12px;
+            padding: 8px;
+            color: #ffd700;
+            background-color: #002f6c;
+            border: 2px solid #ffd700;
+            font: inherit;
+        }
+
+        button {
+            margin: 8px 0 16px;
+            padding: 8px 14px;
+            cursor: pointer;
+            color: #002f6c;
+            background-color: #ffd700;
+            border: 2px solid #002f6c;
+            border-radius: 4px;
+            font: inherit;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Interactive Page</h1>
+
+    <section>
+        <h2>Button Counter</h2>
+        <button id="clickButton" type="button">Click Me</button>
+        <p id="counter" aria-live="polite"></p>
+    </section>
+
+    <section>
+        <h2>Name Greeting</h2>
+        <label for="nameInput">Enter your name</label>
+        <input id="nameInput" type="text" placeholder="Domingo Diaz Jr.">
+        <p id="howAreYou" aria-live="polite"></p>
+    </section>
+
+    <section>
+        <h2>Dynamic List</h2>
+        <label for="thingInput">Add something great</label>
+        <input id="thingInput" type="text">
+        <button id="addThing" type="button">Add</button>
+        <ul id="thingsList"></ul>
+    </section>
+
+    <script>
+        const clickButton = document.getElementById("clickButton");
+        const counter = document.getElementById("counter");
+        const nameInput = document.getElementById("nameInput");
+        const greeting = document.getElementById("howAreYou");
+        const thingInput = document.getElementById("thingInput");
+        const addThing = document.getElementById("addThing");
+        const thingsList = document.getElementById("thingsList");
+        let clicks = 10;
+
+        counter.textContent = "You have clicked the button " + clicks + " times.";
+
+        clickButton.addEventListener("click", function () {
+            clicks = clicks + 1;
+            counter.textContent = "You have clicked the button " + clicks + " times.";
+        });
+
+        nameInput.addEventListener("input", function () {
+            greeting.textContent = nameInput.value === "" ? "" : "Hello, " + nameInput.value + "!";
+            greeting.style.color = "teal";
+        });
+
+        addThing.addEventListener("click", function () {
+            const newThingText = thingInput.value.trim();
+
+            if (newThingText === "") {
+                return;
+            }
+
+            const newThing = document.createElement("li");
+            newThing.textContent = newThingText;
+            thingsList.appendChild(newThing);
+            thingInput.value = "";
+            thingInput.focus();
+        });
+    </script>
+</body>
+</html>
