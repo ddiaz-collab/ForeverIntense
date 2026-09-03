@@ -1,9 +1,3 @@
-// Match all heading colors to the theme
-const headings = document.querySelectorAll("h1, h2, h3, h4");
-headings.forEach(function (heading) {
-    heading.style.color = "#b8860b";
-});
-
 // Dynamic list - add and delete items
 const thingInput = document.querySelector("#thingInput");
 const addThing = document.querySelector("#addThing");

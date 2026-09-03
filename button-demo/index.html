@@ -17,43 +17,30 @@
             text-shadow: 1px 1px 1px #000000;
             position: relative;
             isolation: isolate;
-            background: repeating-linear-gradient(
-                to bottom,
-                #bf0a30 0,
-                #bf0a30 7.7%,
-                #ffffff 7.7%,
-                #ffffff 15.4%
-            );
+            background-color: #5e4600;
+            background-image:
+                radial-gradient(circle at 15% 20%, #fff7bd 0 2px, transparent 3px),
+                radial-gradient(circle at 75% 15%, #ffd700 0 3px, transparent 4px),
+                radial-gradient(circle at 38% 65%, #fff7bd 0 1px, transparent 2px),
+                radial-gradient(circle at 88% 78%, #ffd700 0 2px, transparent 3px),
+                linear-gradient(135deg, #6b5000, #c69413 50%, #5e4600);
+            background-size: 52px 52px, 77px 77px, 39px 39px, 91px 91px, 100% 100%;
         }
 
         body::before {
-            content: "";
-            position: absolute;
-            z-index: 0;
-            top: 0;
-            left: 0;
-            width: 42%;
-            height: 53.8%;
-            background-color: #002868;
-            background-image: radial-gradient(circle, #ffffff 1.8px, transparent 2px);
-            background-size: 20px 20px;
-        }
-
-        body::after {
-            content: "🦅   ✝   🦁   ✝ 🫏       🦅   ✝   🦁   ✝ 🫏";
+            content: "✦  ✧  ✦  ✧  ✦  ✧  ✦";
             position: fixed;
             z-index: 0;
             inset: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #ffd700;
+            color: #fff6b0;
             font-size: clamp(2rem, 6vw, 4rem);
-            letter-spacing: 0.75rem;
-            opacity: 0.32;
+            letter-spacing: 1rem;
+            opacity: 0.5;
             pointer-events: none;
             text-align: center;
-            text-shadow: 2px 2px 2px #002868;
         }
 
         body > * {
@@ -65,12 +52,22 @@
             margin-top: 0;
         }
 
-        .personal-info {
-            color: #b8860b;
-            font-weight: bold;
+        h1,
+        h2 {
+            color: #000000;
+            text-shadow:
+                1px 1px 0 #ffd700,
+                2px 2px 0 #008080,
+                3px 3px 0 #000000,
+                5px 5px 8px rgba(0, 0, 0, 0.7);
         }
 
-        #toggleDetails,
+        .personal-info {
+            color: #000000;
+            font-weight: bold;
+            text-shadow: 1px 1px 0 #ffd700, 2px 2px 2px #008080;
+        }
+
         #addThing,
         button[type="submit"] {
             padding: 8px 14px;
@@ -81,7 +78,6 @@
             border-radius: 4px;
         }
 
-        #toggleDetails:hover,
         #addThing:hover,
         button[type="submit"]:hover {
             background-color: #bf0a30;
