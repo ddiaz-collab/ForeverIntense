@@ -13,34 +13,27 @@
             padding: 32px 20px;
             font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
             line-height: 1.5;
-            color: #b8860b;
-            text-shadow: 1px 1px 1px #000000;
+            font-weight: bold;
+            color: #ffd700;
+            text-shadow: 1px 1px 0 #0047ab, 2px 2px 3px #001f5b;
             position: relative;
             isolation: isolate;
-            background-color: #5e4600;
+            background-color: #4169e1;
             background-image:
-                radial-gradient(circle at 15% 20%, #fff7bd 0 2px, transparent 3px),
-                radial-gradient(circle at 75% 15%, #ffd700 0 3px, transparent 4px),
-                radial-gradient(circle at 38% 65%, #fff7bd 0 1px, transparent 2px),
-                radial-gradient(circle at 88% 78%, #ffd700 0 2px, transparent 3px),
-                linear-gradient(135deg, #6b5000, #c69413 50%, #5e4600);
-            background-size: 52px 52px, 77px 77px, 39px 39px, 91px 91px, 100% 100%;
+                radial-gradient(ellipse at 12% 14%, rgba(255, 255, 255, 0.9) 0 7%, transparent 7.5%),
+                radial-gradient(ellipse at 20% 15%, rgba(255, 255, 255, 0.9) 0 9%, transparent 9.5%),
+                radial-gradient(ellipse at 80% 30%, rgba(255, 255, 255, 0.85) 0 8%, transparent 8.5%),
+                radial-gradient(ellipse at 88% 29%, rgba(255, 255, 255, 0.85) 0 10%, transparent 10.5%),
+                linear-gradient(#2f66d0, #7fb3ff 55%, #2f66d0);
+            background-attachment: fixed;
         }
 
         body::before {
-            content: "✦  ✧  ✦  ✧  ✦  ✧  ✦";
+            content: "";
             position: fixed;
             z-index: 0;
             inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff6b0;
-            font-size: clamp(2rem, 6vw, 4rem);
-            letter-spacing: 1rem;
-            opacity: 0.5;
             pointer-events: none;
-            text-align: center;
         }
 
         body > * {
@@ -54,18 +47,17 @@
 
         h1,
         h2 {
-            color: #000000;
+            color: #ffd700;
             text-shadow:
-                1px 1px 0 #ffd700,
-                2px 2px 0 #008080,
-                3px 3px 0 #000000,
-                5px 5px 8px rgba(0, 0, 0, 0.7);
+                2px 2px 0 #003f8c,
+                4px 4px 0 #001f5b,
+                6px 6px 8px rgba(0, 0, 0, 0.55);
         }
 
         .personal-info {
-            color: #000000;
+            color: #ffd700;
             font-weight: bold;
-            text-shadow: 1px 1px 0 #ffd700, 2px 2px 2px #008080;
+            text-shadow: 1px 1px 0 #003f8c, 2px 2px 2px #001f5b;
         }
 
         #addThing,

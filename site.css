@@ -7,28 +7,33 @@
 }
 
 :root {
-    --color-page: #f5f0e7;
-    --color-surface: #fffaf2;
-    --color-surface-soft: #f2e6d4;
-    --color-brand: #0d3b66;
-    --color-brand-strong: #082742;
-    --color-accent: #b4572b;
-    --color-text: #1b2632;
-    --color-text-muted: #31485d;
-    --color-border: #9ab1c5;
-    --color-focus: #d17a22;
-    --color-error: #8a1538;
-    --shadow-card: 0 14px 30px rgba(13, 59, 102, 0.12);
+    --color-page: #4f88ea;
+    --color-surface: #0a3f89;
+    --color-surface-soft: #1555a8;
+    --color-brand: #002f6c;
+    --color-brand-strong: #001f4a;
+    --color-accent: #ffd700;
+    --color-text: #ffd700;
+    --color-text-muted: #fff1a3;
+    --color-border: #ffd700;
+    --color-focus: #ffffff;
+    --color-error: #ffd700;
+    --shadow-card: 0 14px 30px rgba(0, 31, 74, 0.35);
 }
 
 body {
-    font-family: "Source Sans 3", "Trebuchet MS", sans-serif;
+    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
     line-height: 1.6;
     color: var(--color-text);
+    font-weight: 700;
+    text-shadow: 1px 1px 0 #003f8c, 2px 2px 3px #001f4a;
     background:
-        linear-gradient(125deg, rgba(180, 87, 43, 0.09), transparent 38%),
-        radial-gradient(circle at 92% 8%, rgba(13, 59, 102, 0.11), transparent 32%),
-        var(--color-page);
+        radial-gradient(ellipse at 12% 14%, rgba(255, 255, 255, 0.88) 0 7%, transparent 7.5%),
+        radial-gradient(ellipse at 20% 15%, rgba(255, 255, 255, 0.88) 0 9%, transparent 9.5%),
+        radial-gradient(ellipse at 80% 30%, rgba(255, 255, 255, 0.82) 0 8%, transparent 8.5%),
+        radial-gradient(ellipse at 88% 29%, rgba(255, 255, 255, 0.82) 0 10%, transparent 10.5%),
+        linear-gradient(#2f66d0, #7fb3ff 55%, #2f66d0);
+    background-attachment: fixed;
 }
 
 .skip-link {
@@ -134,9 +139,10 @@ h4 {
 
 h2,
 h3 {
-    font-family: "DM Serif Display", Georgia, serif;
+    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
     margin-bottom: 0.6rem;
-    color: var(--color-brand-strong);
+    color: #ffd700;
+    text-shadow: 2px 2px 0 #003f8c, 4px 4px 0 #001f4a, 6px 6px 8px rgba(0, 0, 0, 0.55);
 }
 
 h2 {

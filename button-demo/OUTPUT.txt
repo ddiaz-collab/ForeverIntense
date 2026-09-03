@@ -1,0 +1,20 @@
+Domingo Diaz Jr. - Form Validation and API Project Output
+
+Accessible Form
+- The form has four labeled fields: name, email, phone, and message.
+- It uses text, email, telephone, and textarea input types.
+
+Validation Output
+- Submitting an empty required field shows a visible error beside that field.
+- The submit event uses event.preventDefault() so the page does not refresh.
+- The email field checks for a valid email format.
+- An email error clears when the visitor begins correcting the field.
+
+API Output
+- A valid form submission requests a random piece of advice from the Advice Slip API.
+- The advice is displayed in the "Advice from Domingo" section.
+- response.ok handles server errors and .catch() handles request failures.
+
+Files
+- index.html: page structure and CSS styling
+- script.js: form validation, DOM updates, to-do list, and API fetch
