@@ -423,3 +423,22 @@ footer p {
         margin-bottom: 0.35rem;
     }
 }
+
+@media (max-width: 560px) {
+    .header-inner {
+        padding: 0.85rem;
+    }
+
+    nav ul {
+        width: 100%;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
